@@ -20,9 +20,11 @@
 
 #include <linux/syscall.h>
 #include <syscall.h>
+#define SIGCHLD 17
+#define NULL 0
 
 int
 fork ()
 {
-  return _sys_call (SYS_fork);
+  return _sys_call4 (SYS_clone, SIGCHLD, 0, NULL, 0);
 }

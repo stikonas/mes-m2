@@ -23,7 +23,7 @@
 
 #include <string.h>
 
-// char const *MES_VERSION = "0.22";
+char const *MES_VERSION = "0.22";
 
 #if __M2_PLANET__
 #define M2_CELL_SIZE 12

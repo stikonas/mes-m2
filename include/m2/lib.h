@@ -18,8 +18,7 @@
  * along with GNU Mes.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __M2_LIB_H
-#define __M2_LIB_H
+#define __M2_LIB_H 1
 
 char **environ;
 int __stdin;
@@ -27,8 +26,14 @@ int __stdout;
 int __stderr;
 int errno;
 
+typedef SCM ulong;
+typedef ulong size_t;
+typedef long ssize_t;
+
 // CONSTANT EOF 0xffffffff
+#define EOF 0xffffffff
 // CONSTANT __FILEDES_MAX 512
+#define __FILEDES_MAX 512
 
 char* cast_intp_to_charp (int *i);
 char* cast_long_to_charp (long i);
@@ -66,5 +71,3 @@ struct timeval
   long tv_sec;
   long tv_usec;
 };
-
-#endif /* __M2_LIB_H */

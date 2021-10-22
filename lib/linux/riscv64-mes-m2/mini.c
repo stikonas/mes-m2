@@ -1,6 +1,6 @@
 /* -*-comment-start: "//";comment-end:""-*-
  * GNU Mes --- Maxwell Equations of Software
- * Copyright © 2016,2017,2018,2019,2020 Jan (janneke) Nieuwenhuizen <janneke@gnu.org>
+ * Copyright © 2016,2017,2019 Jan (janneke) Nieuwenhuizen <janneke@gnu.org>
  *
  * This file is part of GNU Mes.
  *
@@ -18,26 +18,20 @@
  * along with GNU Mes.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <mes/lib.h>
-#include <mes/mes.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <sys/types.h>
-
-// CONSTANT PATH_MAX 1024
-#define PATH_MAX 1024
-
-char *__getcwd_buf;
-
-char *
-getcwd (char *buffer, int size)
+void
+_exit ()
 {
-  if (buffer == 0)
-    buffer = __getcwd_buf;
-  if (buffer == 0)
-    {
-      __getcwd_buf = malloc (PATH_MAX);
-      buffer = __getcwd_buf;
-    }
-  return _getcwd (buffer, size);
+  asm ("RD_A7 !93 ADDI");
+  asm ("RD_A0 RS1_FP !-8 LD");
+  asm ("ECALL");
+}
+
+void
+_write (int filedes, void *buffer, int size)
+{
+  asm("RD_A0 RS1_FP !-8 LD");
+  asm("RD_A1 RS1_FP !-16 LD");
+  asm("RD_A2 RS1_FP !-24 LD");
+  asm("RD_A7 !64 ADDI");
+  asm("ECALL");
 }

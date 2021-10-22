@@ -18,8 +18,6 @@
  * along with GNU Mes.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __MES_SYMBOLS_H
-#define __MES_SYMBOLS_H
 
 struct scm *cell_nil;
 struct scm *cell_f;
@@ -147,4 +145,3 @@ struct scm *cell_symbol_test;
 #define CELL_SYMBOL_RECORD_TYPE 82
 
 
-#endif /* __MES_SYMBOLS_H */
