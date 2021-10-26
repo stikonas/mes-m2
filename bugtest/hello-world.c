@@ -1,5 +1,8 @@
-#include <stdio.h>
+#include <fputs.h>
 
 int main(){
-  printf("Hello, World!\n");
+  char *a;
+  malloc(a, 1024);
+  a = "Hello, World!\n";
+  fputs(a, 1);
 }

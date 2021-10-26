@@ -23,5 +23,5 @@
 int
 fputs (char const *s, FILE * stream)
 {
-  return fdputs (s, (long) stream);
+  return fdputs (s, stream);
 }

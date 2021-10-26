@@ -29,6 +29,7 @@ int errno;
 typedef SCM ulong;
 typedef ulong size_t;
 typedef long ssize_t;
+typedef long FILE;
 
 // CONSTANT EOF 0xffffffff
 #define EOF 0xffffffff

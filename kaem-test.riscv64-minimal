@@ -28,20 +28,21 @@ M2-Planet                                       \
     -f lib/mes/globals.c                        \
     -f lib/m2/cast.c                            \
     -f lib/m2/exit.c                            \
+    -f lib/mes/mini-write.c                     \
     -f lib/linux/riscv64-mes-m2/syscall.c       \
     -f include/linux/riscv64/syscall.h          \
     -f lib/linux/brk.c                          \
     -f lib/stdlib/malloc.c                      \
     -f lib/string/memset.c                      \
     -f lib/m2/read.c                            \
+    -f lib/mes/fdgetc.c                         \
+    -f lib/mes/fdputs.c                         \
     -f lib/stdio/getchar.c                      \
     -f lib/stdio/putchar.c                      \
-    -f lib/stdio/printf.c                       \
+    -f lib/stdio/fputs.c                        \
     -f lib/m2/open.c                            \
     -f lib/m2/mes_open.c                        \
     -f lib/string/strlen.c                      \
-                                                \
-    -f include/stdio.h                          \
                                                 \
     -f lib/string/strncmp.c                     \
     -f lib/posix/getenv.c                       \
@@ -49,6 +50,7 @@ M2-Planet                                       \
     -f lib/ctype/isxdigit.c                     \
     -f lib/ctype/isspace.c                      \
     -f lib/ctype/isnumber.c                     \
+    -f lib/mes/abtol.c                          \
     -f lib/stdlib/atoi.c                        \
     -f lib/string/memcpy.c                      \
     -f lib/stdlib/free.c                        \
